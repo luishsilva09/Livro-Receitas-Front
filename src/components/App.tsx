@@ -1,14 +1,19 @@
+import GlobalStyle from "./globalStyles";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Signin } from "./signin/Signin";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<></>} />
-        <Route path="/recipes" element={<></>} />
-        <Route path="/newRecipe" element={<></>} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Signin />} />
+          <Route path="/recipes" element={<></>} />
+          <Route path="/newRecipe" element={<></>} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
