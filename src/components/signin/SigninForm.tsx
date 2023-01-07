@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -8,12 +8,13 @@ export function SigninForm() {
     email: "",
     password: "",
   });
-  async function sendLogin(event: any) {
+  async function sendLogin(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     console.log("login");
   }
   return (
     <ContainerForm>
-      <Form onSubmit={(event: any) => sendLogin(event)}>
+      <Form onSubmit={(event) => sendLogin(event)}>
         <h2>Login</h2>
         <input
           type="email"
@@ -33,7 +34,7 @@ export function SigninForm() {
             setLoginData({ ...loginData, password: e.target.value })
           }
         />
-        <button type="submit" disabled={load} data-cy="submitSignin">
+        <button type="submit" disabled={load}>
           {load ? <>load</> : <>Entrar</>}
         </button>
 
@@ -57,6 +58,7 @@ const ContainerForm = styled.div`
   max-width: 500px;
   align-items: center;
   justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 const Form = styled.form`
