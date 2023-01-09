@@ -2,6 +2,7 @@ import GlobalStyle from "./globalStyles";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Signin } from "./signin/Signin";
 import { Signup } from "./signup/Signup";
+import { Home } from "./home/Home";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/recipes" element={<></>} />
+          <Route path="/home" element={<Home />} />
           <Route path="/newRecipe" element={<></>} />
         </Routes>
       </BrowserRouter>
