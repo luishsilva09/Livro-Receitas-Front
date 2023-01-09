@@ -1,12 +1,19 @@
 import styled from "styled-components";
 import { HiMenu } from "react-icons/hi";
+import { SideMenu } from "./SideMenu";
+import { useState } from "react";
 
 export function TopBar() {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <ContainerBar>
-      <HiMenu className="icon" />
-      <p>Lista Receitas</p>
-    </ContainerBar>
+    <>
+      <ContainerBar>
+        <HiMenu className="icon" onClick={() => setShowMenu(!showMenu)} />
+        <p>Lista Receitas</p>
+      </ContainerBar>
+      {showMenu ? <SideMenu /> : <></>}
+    </>
   );
 }
 
@@ -16,7 +23,7 @@ const ContainerBar = styled.div`
   height: 60px;
   display: flex;
   align-items: center;
-  position: relative;
+  position: absolute;
 
   p {
     color: #fff;
@@ -24,10 +31,11 @@ const ContainerBar = styled.div`
     font-weight: 400;
     width: 100%;
     text-align: center;
-    position: fixed;
+    position: relative;
   }
 
   .icon {
+    z-index: 1;
     color: #fff;
     font-size: 40px;
     font-weight: 500;
