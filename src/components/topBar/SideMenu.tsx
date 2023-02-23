@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export function SideMenu() {
+export function SideMenu(props: any) {
   return (
     <ContainerMenu>
       <Left>
@@ -8,7 +8,7 @@ export function SideMenu() {
         <p>Nova receita</p>
         <p>Minhas receitas</p>
       </Left>
-      <Right></Right>
+      <Right onClick={() => props.setShowMenu(false)}></Right>
     </ContainerMenu>
   );
 }
@@ -29,14 +29,16 @@ const Left = styled.div`
   flex-direction: column;
   align-items: center;
   transition: width 2s;
-  :hover {
-    width: 400px;
-  }
+
   p {
     color: #fff;
     font-size: 25px;
     font-weight: 300;
     margin: 15px;
+    :hover {
+      cursor: pointer;
+      filter: brightness(20%);
+    }
   }
 `;
 const Right = styled.div`

@@ -12,7 +12,7 @@ export function TopBar() {
         <HiMenu className="icon" onClick={() => setShowMenu(!showMenu)} />
         <p>Lista Receitas</p>
       </ContainerBar>
-      {showMenu ? <SideMenu /> : <></>}
+      {showMenu ? <SideMenu setShowMenu={setShowMenu} /> : <></>}
     </>
   );
 }
