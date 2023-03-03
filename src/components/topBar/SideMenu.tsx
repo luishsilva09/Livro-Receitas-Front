@@ -1,12 +1,19 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export function SideMenu(props: any) {
   return (
     <ContainerMenu>
       <Left>
-        <p>Receitas</p>
-        <p>Nova receita</p>
-        <p>Minhas receitas</p>
+        <Link to="/recipes">
+          <p>Receitas</p>
+        </Link>
+        <Link to="/newrecipe">
+          <p>Nova receita</p>
+        </Link>
+        <Link to="/myrecipes">
+          <p>Minhas receitas</p>
+        </Link>
       </Left>
       <Right onClick={() => props.setShowMenu(false)}></Right>
     </ContainerMenu>
@@ -19,6 +26,10 @@ const ContainerMenu = styled.div`
   height: 100vh;
   padding-top: 60px;
   position: absolute;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const Left = styled.div`
