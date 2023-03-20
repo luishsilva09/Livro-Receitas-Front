@@ -11,9 +11,8 @@ export function Home() {
             <input placeholder="Pesquisar..."></input>
           </SearchBar>
           <Recipe />
-          <p>testedslcksdlcmsldcslkvcs</p>
-          <p>testedslcksdlcmsldcslkvcs</p>
-          <p>testedslcksdlcmsldcslkvcs</p>
+          <Recipe />
+          <Recipe />
         </Content>
       </ContainerHome>
     </>
@@ -21,18 +20,20 @@ export function Home() {
 }
 
 const Content = styled.div`
-  background-color: red;
   width: 70%;
   padding: 4%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10%;
+  @media (max-width: 460px) {
+    margin-top: 15%;
+  }
 `;
 
 const ContainerHome = styled.div`
   width: 100%;
   height: 100%;
-  background-color: aliceblue;
   display: flex;
   justify-content: center;
 
@@ -42,13 +43,13 @@ const ContainerHome = styled.div`
 `;
 
 const SearchBar = styled.div`
-  width: 70%;
+  width: 90%;
   height: 50px;
   background-color: #d9d9d9;
   border-radius: 50px;
   display: flex;
   align-items: center;
-  padding: 1%;
+  padding: 3%;
 
   input {
     background-color: #d9d9d9;
